@@ -5,4 +5,5 @@ app/__pycache__/config.cpython-36.pyc
 ./idea
 app/__init__.pyc
 app/config.pyc
+.idea/workspace.xml
 
