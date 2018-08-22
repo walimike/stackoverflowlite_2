@@ -5,3 +5,6 @@ StackOverflow-lite is a platform where people can ask questions and provide answ
 
 
 Challenge 1 output is hosted on Github pages and can be found https://walimike.github.io/stackoverflowlite_2/UI/index.html, the pages are linked together for seamless going through
+
+
+Pivotol tracker user stories are available on this link https://www.pivotaltracker.com/n/projects/2189640
