@@ -2,8 +2,10 @@ venv/
 app/__pycache__/data.cpython-36.pyc
 app/__pycache__/__init__.cpython-36.pyc
 app/__pycache__/config.cpython-36.pyc
-./idea
+./idea/
 app/__init__.pyc
 app/config.pyc
-.idea/workspace.xml
-
+app/__init__.pyc
+app/config.pyc
+app/data.pyc
+app/views.pyc

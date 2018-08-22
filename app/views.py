@@ -14,9 +14,7 @@ def get_all_questions():
 # This code fetches specific question
 @app.route('/stackoverlow/api/v1/questions/<int:qn_id>', methods=['GET'])
 def get_one_question(qn_id):
-    for one_question in questions:
-        if one_question['qn_id'] == qn_id:
-            return jsonify({'question': one_question})
+    pass
 
 
 # This is to post/add a question
@@ -29,7 +27,21 @@ def ask_question():
 # This is to add an answer
 @app.route('/stackoverlow/api/v1/questions/<int:qn_id>/answer', methods={'POST'})
 def answer_to_question(qn_id):
-    pass
+    particular_question = answers[qn_id - 1]
+    all_answers = particular_question['answer']
+    first_answer = all_answers[0]
+    given_answer = request.get_json()
+    if valid_answer(given_answer) and first_answer['answer'] == '':
+        new_answer = {'ans_id': 1, 'answer': given_answer["answer"]}
+        all_answers[0] = new_answer
+        response = jsonify({'answers': answers})
+    elif valid_answer(given_answer) and first_answer['answer']:
+        new_answer = {'ans_id': (len(all_answers) + 1), 'answer': given_answer["answer"]}
+        all_answers.append(new_answer)
+        response = jsonify({'answers': answers})
+    else:
+        response = custom_response(400, 'Bad Request', "Request must contain 'answers' data")
+    return response
 
 
 def valid_question(question_received):
