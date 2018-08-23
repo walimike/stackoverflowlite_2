@@ -32,5 +32,5 @@ class EndpointsTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_post_answer(self):
-        res = self.client.post('/stackoverlow/api/v1/questions/1/answers', data=json.dumps(self.test_data_answer), content_type='application/json')
+        res = self.client.post('/stackoverlow/api/v1/questions/1/answer', data=json.dumps(self.test_data_answer), content_type='application/json')
         self.assertEqual(res.status_code, 201)
