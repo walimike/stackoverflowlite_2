@@ -8,20 +8,23 @@ app = create_app (config_name='development')
 # This code fetches all questions
 @app.route('/stackoverlow/api/v1/questions', methods=['GET'])
 def get_all_questions():
-    pass
+    return jsonify({'questions':questions})
+
 
 
 # This code fetches specific question
 @app.route('/stackoverlow/api/v1/questions/<int:qn_id>', methods=['GET'])
 def get_one_question(qn_id):
-    pass
+    for one_question in questions:
+        if one_question['qn_id'] == qn_id:
+            return jsonify({'question': one_question})
 
 
 # This is to post/add a question
 @app.route('/stackoverlow/api/v1/questions', methods=['POST'])
 def ask_question():
     # {"question": text}
-    pass
+
 
 
 # This is to add an answer
