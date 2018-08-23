@@ -1,10 +1,8 @@
 venv/
-app/__pycache__
-.idea/
+.idea
 app/__init__.pyc
 app/config.pyc
-app/__init__.pyc
+app/__pycache__
 app/config.pyc
 app/data.pyc
 app/views.pyc
-
