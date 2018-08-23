@@ -39,7 +39,7 @@ def ask_question():
 
 
 # This is to add an answer
-@app.route('/stackoverlow/api/v1/questions/<int:qn_id>/answer', methods={'POST'})
+@app.route('/stackoverlow/api/v1/questions/<int:qn_id>/answer', methods=['POST'])
 def answer_to_question(qn_id):
     particular_question = answers[qn_id - 1]
     all_answers = particular_question['answer']
