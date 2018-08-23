@@ -16,7 +16,7 @@ class EndpointsTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_can_post_question(self):
-        test_question = {"qn_id":1, "question":"What's up?"}
+        test_question = {"question":"What's up?"}
         res = self.client.post('/stackoverlow/api/v1/questions', json = test_question)
         self.assertEqual(res.status_code, 201)
 
@@ -25,6 +25,6 @@ class EndpointsTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_can_post_answer(self):
-        test_answer = {"ans_id":1, "answer":"The sky is up"}
+        test_answer = {"answer":"The sky is up"}
         res = self.client.post('/stackoverlow/api/v1/questions/1/answer', json = test_answer)
         self.assertEqual(res.status_code, 201)
