@@ -1,11 +1,13 @@
 import unittest
 
+from flask_testing import TestCase
+
 from flask import json
 
 from app.views import app
 
 
-class EndpointsTestCase(unittest.TestCase):
+class EndpointsTestCase(TestCase):
 
     def setUp(self):
         self.client = app.test_client()
@@ -21,7 +23,7 @@ class EndpointsTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 201)
 
     def test_can_get_one_question(self):
-        response = self.client.get('/stackoverlow/api/v1/questions/1', content_type='application/json')
+        response = self.client.get('/stackoverlow/api/v1/questions/1')
         self.assertEqual(response.status_code, 200)
 
     def test_can_post_answer(self):
