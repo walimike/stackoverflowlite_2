@@ -19,18 +19,18 @@ class EndpointsTestCase(unittest.TestCase):
         }
 
     # test for endpoints. Run using $pytest
-    def test_get_all_questions(self):
+    def test_can_get_all_questions(self):
         response = self.client.get('/stackoverlow/api/v1/questions', content_type='application/json')
         self.assertEqual(response.status_code, 200)
 
-    def test_post_question(self):
+    def test_can_post_question(self):
         res = self.client.post('/stackoverlow/api/v1/questions', data=json.dumps(self.test_data_question), content_type='application/json')
-        self.assertEqual(res.status_code, 200)
+        self.assertEqual(res.status_code, 201)
 
-    def test_get_one_question(self):
+    def test_can_get_one_question(self):
         response = self.client.get('/stackoverlow/api/v1/questions/1', content_type='application/json')
         self.assertEqual(response.status_code, 200)
 
-    def test_post_answer(self):
+    def test_can_post_answer(self):
         res = self.client.post('/stackoverlow/api/v1/questions/1/answer', data=json.dumps(self.test_data_answer), content_type='application/json')
-        self.assertEqual(res.status_code, 200)
+        self.assertEqual(res.status_code, 201)
