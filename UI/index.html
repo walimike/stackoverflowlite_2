@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="static/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+       <div id="branding">
+         <h1>StackOverflow <span class="highlight">Lite</span><h1>
+       </div>
+       <nav>
+           <div id="signinarea">
+                <ul>
+                 <li>
+                   <form >
+                     <input type="email" placeholder="Enter email..">
+                   </form>
+                 </li>
+                 <li>
+                   <form>
+                       <input type="password" placeholder="Enter password..">
+                   </form>
+                 </li>
+                 <li><a href="home.html"><button type="submit" class="button_1">SignIn</button></a></li>
+               </ul>
+           </div>
+       </nav>
+    </div>
+  </header>
+  <section id="showcase">
+    <div class="container">
+      <h1>StackOverflow-lite is a platform where people can ask questions and provide answers.</h1>
+    </div>
+  </section>
+  <section id="signup">
+    <div class="container">
+      <form class="signup-form">
+
+    <!-- form header -->
+          <div class="form-header">
+            <h1>Create Account below</h1>
+          </div>
+
+          <!-- form body -->
+          <div class="form-body">
+
+            <!-- Firstname and Lastname -->
+              <div class="horizontal-group">
+                <div class="form-group left">
+                  <input type="text" id="firstname" class="form-input" placeholder="Enter your first name... *" required="required" />
+                </div>
+                <div class="form-group right">
+                  <input type="text" id="lastname" class="form-input" placeholder="Enter your last name... *" />
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="form-group">
+                  <input type="email" id="email" class="form-input" placeholder="Enter your email... *" required="required">
+              </div>
+
+              <!-- Passwrod and confirm password -->
+              <div class="horizontal-group">
+                  <div class="form-group left">
+                    <input type="password" id="password" class="form-input" placeholder="Enter your password.... *" required="required">
+                  </div>
+                  <div class="form-group right">
+                    <input type="password" class="form-input" id="confirm-password" placeholder="Confirm Password.. *" required="required">
+                  </div>
+              </div>
+              <div class="form-footer">
+                  <button type="submit" class="button_1">Sign Up</button>
+              </div>
+          </div>
+        </form>
+    </div>
+  </section>
+  <h1 id="frequentlyaked">Frequently asked questions</h1>
+  <div class="question-area">
+    <div id="q">
+      &bull; <a href="answer.html">QN; What’s Wrong with Using Public Wi-Fi?</a>
+    </div>
+    <div class="num-answers">
+      <input type="checkbox" class="read-more-state" id="post-3" />
+      <p class="read-more-wrap"> ANS; Most of us put a lot of effort into finding free Wi-Fi, but public Wi-Fi networks have their own share of problems—particularly <span class="read-more-target highlight"> that it’s very insecure. Even if a Wi-Fi network has a password, other people on the network could see what you’re doing, or—if they were so inclinded—steal personal information and passwords. Luckily, there’s a lot you can do to stay safe: make sure sharing is turned off, use HTTPS whenever possible, and run your traffic through a VPN. Follow this guide for the details, and you should be a-okay.</span></p>
+      <label for="post-3" class="read-more-trigger"></label>
+    </div>
+  </div>
+  <div class="question-area">
+    <div id="q">
+      &bull; <a href="answer.html">QN: What do Viruses, Trojans, and Other Malware Actually Do?</a>
+    </div>
+    <div class="num-answers">
+       <input type="checkbox" class="read-more-state" id="post-1" />
+        <p class="read-more-wrap">QN: Everyone knows viruses and trojans are bad, but a lot of people don’t know how exactly they work.<span class="read-more-target highlight"> Viruses, for example, are programs that copy themselves and infect a computer, spreading from one to another—just like, well, a real life virus. Trojans, on the other hand, are applications that look normal, but secretly have code that’s doing something else—like letting someone else control your computer. We highly recommend reading this explanation for more detail on the different types of malware, as well as the biggest myths surrounding them. And, as always, make sure you’re running a good antivirus program—even if you have good browsing habits.</span></p>
+        <label for="post-1" class="read-more-trigger"></label>
+    </div>
+  </div>
+  <div class="askquestion">
+    <form action="" >
+      <input class="box-area" type="text"  placeholder="Ask question here">
+    </form>
+    <button class="button_3" type="submit">Post</button>
+</div>
+  <footer>
+    <p>copyright &copy; walimike2018 </p>
+  </footer>
+</body>
+
+</html>
