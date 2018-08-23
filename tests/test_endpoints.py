@@ -25,7 +25,7 @@ class EndpointsTestCase(unittest.TestCase):
 
     def test_post_question(self):
         res = self.client.post('/stackoverlow/api/v1/questions', data=json.dumps(self.test_data_question), content_type='application/json')
-        self.assertEqual(res.status_code, 201)
+        self.assertEqual(res.status_code, 200)
 
     def test_get_one_question(self):
         response = self.client.get('/stackoverlow/api/v1/questions/1', content_type='application/json')
@@ -33,4 +33,4 @@ class EndpointsTestCase(unittest.TestCase):
 
     def test_post_answer(self):
         res = self.client.post('/stackoverlow/api/v1/questions/1/answer', data=json.dumps(self.test_data_answer), content_type='application/json')
-        self.assertEqual(res.status_code, 201)
+        self.assertEqual(res.status_code, 200)
