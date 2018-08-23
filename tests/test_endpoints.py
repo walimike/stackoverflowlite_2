@@ -8,23 +8,16 @@ from app.views import app
 class EndpointsTestCase(unittest.TestCase):
 
     def setUp(self):
-        self.client = app.test_client(self)
-        self.test_data_question = {
-            "qn_id": 1,
-            "question": "Whats's up?"
-        }
-        self.test_data_answer = {
-            "ans_id": 1,
-            "answer" : "The sky is up"
-        }
+        self.client = app.test_client()
 
     # test for endpoints. Run using $pytest
     def test_can_get_all_questions(self):
-        response = self.client.get('/stackoverlow/api/v1/questions', content_type='application/json')
+        response = self.client.get('/stackoverlow/api/v1/questions')
         self.assertEqual(response.status_code, 200)
 
     def test_can_post_question(self):
-        res = self.client.post('/stackoverlow/api/v1/questions', data=json.dumps(self.test_data_question), content_type='application/json')
+        test_question = {"qn_id":1, "question":"What's up?"}
+        res = self.client.post('/stackoverlow/api/v1/questions', json = test_question)
         self.assertEqual(res.status_code, 201)
 
     def test_can_get_one_question(self):
@@ -32,5 +25,6 @@ class EndpointsTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_can_post_answer(self):
-        res = self.client.post('/stackoverlow/api/v1/questions/1/answer', data=json.dumps(self.test_data_answer), content_type='application/json')
+        test_answer = {"ans_id":1, "answer":"The sky is up"}
+        res = self.client.post('/stackoverlow/api/v1/questions/1/answer', json = test_answer)
         self.assertEqual(res.status_code, 201)
