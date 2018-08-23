@@ -1,13 +1,11 @@
 import unittest
 
-from flask_testing import TestCase
-
 from flask import json
 
 from app.views import app
 
 
-class EndpointsTestCase(TestCase):
+class EndpointsTestCase(unittest.TestCase):
 
     def setUp(self):
         self.client = app.test_client()
