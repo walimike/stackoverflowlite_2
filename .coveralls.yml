@@ -1,2 +1,2 @@
-repo_token: c7Z1RT0aXqaRc1zUEEGFDxUAXTbzJEKxW
-gem 'coveralls', require: false
+service_name: travis-pro
+repo_token: c7Z1RT0aXqaRclzUEEGFDxUAXTbzJEKxW
