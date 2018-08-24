@@ -8,7 +8,7 @@ app = create_app(config_name='development')
 # This code fetches all questions
 @app.route('/stackoverlow/api/v1/questions', methods=['GET'])
 def get_all_questions():
-    return jsonify({'questions': questions}), 200
+    return jsonify({'questions': questions})
 
 
 # This code fetches specific question
@@ -16,7 +16,7 @@ def get_all_questions():
 def get_one_question(qn_id):
     for one_question in questions:
         if one_question['qn_id'] == qn_id:
-            return jsonify({'question': one_question}), 200
+            return jsonify({'question': one_question})
 
 
 # This is to post/add a question
@@ -28,14 +28,14 @@ def ask_question():
     if valid_question(asked_question) and first_question['question'] == '':
         new_question = {'qn_id': 1, 'question': asked_question["question"]}
         questions[0] = new_question
-        response = jsonify({'questions': questions}), 201
+        response = jsonify({'questions': questions})
     elif valid_question(asked_question) and first_question['question']:
         new_question = {'qn_id': (len(questions) + 1), 'question': asked_question["question"]}
         questions.append(new_question)
-        response = jsonify({'questions': questions}), 201
+        response = jsonify({'questions': questions})
     else:
-        response = friendly_response(400, 'Bad Request', "Request must contain 'question' data")
-    return response
+        response = make_response("Request must contain 'question' data", 404)
+    return make_response(response, 201)
 
 
 # This is to add an answer
@@ -48,14 +48,14 @@ def answer_to_question(qn_id):
     if valid_answer(given_answer) and first_answer['answer'] == '':
         new_answer = {'ans_id': 1, 'answer': given_answer["answer"]}
         all_answers[0] = new_answer
-        response = jsonify({'answers': answers}), 201
+        response = jsonify({'answers': answers})
     elif valid_answer(given_answer) and first_answer['answer']:
         new_answer = {'ans_id': (len(all_answers) + 1), 'answer': given_answer["answer"]}
         all_answers.append(new_answer)
-        response = jsonify({'answers': answers}), 201
+        response = jsonify({'answers': answers})
     else:
-        response = friendly_response(400, 'Bad Request', "Request must contain 'answers' data")
-    return response
+        response = make_response( "Request must contain 'answers' data", 404)
+    return make_response(response, 201)
 
 
 def valid_question(question_received):
@@ -70,9 +70,3 @@ def valid_answer(answer_received):
     return False
 
 
-def friendly_response(status_code, status_message, friendly_message):
-    response = make_response(
-        jsonify({'status_code': str(status_code) + ': ' + status_message + ', ' + friendly_message}),
-        status_code)
-    response.headers['Status-Code'] = str(status_code) + ': ' + status_message + ', ' + friendly_message
-    return response

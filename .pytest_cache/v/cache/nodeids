@@ -1,0 +1,6 @@
+[
+  "tests/test_endpoints.py::EndpointsTestCase::test_can_get_all_questions", 
+  "tests/test_endpoints.py::EndpointsTestCase::test_can_get_one_question", 
+  "tests/test_endpoints.py::EndpointsTestCase::test_can_post_answer", 
+  "tests/test_endpoints.py::EndpointsTestCase::test_can_post_question"
+]
