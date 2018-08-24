@@ -6,4 +6,7 @@ app/__pycache__
 app/config.pyc
 app/data.pyc
 app/views.pyc
-
+tests/__pycache__
+tests/__init__.pyc
+app/data.pyc
+.pytest_cache
