@@ -2,7 +2,9 @@ import unittest
 
 from flask import json
 
-from app.views import app
+from app import create_app
+
+app = create_app(config_name='testing')
 
 
 class EndpointsTestCase(unittest.TestCase):
