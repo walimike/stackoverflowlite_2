@@ -59,13 +59,13 @@ def answer_to_question(qn_id):
 
 
 def valid_question(question_received):
-    if question_received and isinstance(question_received, dict) and 'question' in question_received and not question_received['question'].isspace():
+    if question_received and isinstance(question_received, dict) and 'question' in question_received and not question_received['question'].isspace() and question_received != '':
         return True
     return False
 
 
 def valid_answer(answer_received):
-    if answer_received and isinstance(answer_received, dict) and 'answer' in answer_received and not answer_received['answer'].isspace():
+    if answer_received and isinstance(answer_received, dict) and 'answer' in answer_received and not answer_received['answer'].isspace() and answer_received != '' :
         return True
     return False
 
