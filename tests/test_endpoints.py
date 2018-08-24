@@ -1,5 +1,7 @@
 import unittest
 
+from flask import json
+
 from app.views import app
 
 
